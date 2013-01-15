@@ -1,0 +1,8 @@
+class Changes2 < ActiveRecord::Migration
+  def up
+	  add_column :breakers, :city, :string
+	  remove_column :breakers, :province
+
+  def down
+  end
+end

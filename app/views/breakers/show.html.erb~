@@ -1,0 +1,75 @@
+<p id="notice"><%= notice %></p>
+<div style="float:left"> 
+	<p>
+  <b>Photo:</b>
+  <% if @breaker.has_photo? %>
+	  <%= image_tag(@breaker.photo_path, :width => "250") %>
+          <% else %>
+	  No photo.
+  <% end %>
+  </p>
+
+  <p>
+</div>
+
+  <b>Name:</b>
+  <%= @breaker.name %>
+</p>
+
+<p>
+  <b>Password:</b>
+  <%= @breaker.password %>
+  </p>
+
+<p>
+  <b>Address:</b>
+  <%= @breaker.address %>
+</p>
+
+<p>
+  <b>City:</b>
+  <%= @breaker.city %>
+</p>
+
+
+<p>
+  <b>State:</b>
+  <%= @breaker.state %>
+</p>
+
+<p>
+  <b>Country:</b>
+  <%= @breaker.country %>
+</p>
+
+
+
+<p>
+  <b>Region:</b>
+  <%= @breaker.region %>
+</p>
+
+
+<p>
+  <b>Email:</b>
+  <%= @breaker.email %>
+</p>
+
+<p>
+  <b>Birthday:</b>
+  <%= @breaker.birthday %>
+</p>
+
+<p>
+  <b>Bboying since:</b>
+  <%= @breaker.bboying_since %>
+</p>
+
+<p>
+  <b>Favorite character:</b>
+  <%= @breaker.favorite_character %>
+</p>
+
+
+<%= link_to 'Edit', edit_breaker_path(@breaker) %> |
+<%= link_to 'Back', breakers_path %>

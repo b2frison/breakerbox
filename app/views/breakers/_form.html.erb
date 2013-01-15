@@ -1,0 +1,68 @@
+<%= form_for(@breaker, :html => { :multipart => true }) do |f| %>
+  <% if @breaker.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@breaker.errors.count, "error") %> prohibited this breaker from being saved:</h2>
+
+      <ul>
+      <% @breaker.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="field">
+	  <%= f.label :photo %><br />
+	  <%= f.file_field :photo %><br />
+  </div> 
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+	  <%= f.label :breaking_name %><br />
+	  <%= f.text_field :breaking_name %>
+  </div>
+	
+  <div class="field">
+    <%= f.label :password %><br />
+    <%= f.text_field :password %>
+  </div>
+  
+  <div class="field">
+    <%= f.label :address %><br />
+    <%= f.text_field :address %>
+  </div>
+  <div class="field">
+    <%= f.label :city %><br />
+    <%= f.text_field :city %>
+  </div>
+
+  <div class="field">
+    <%= f.label :state %><br />
+    <%= f.select(:state, %w[ None Alabama Alaska Arizona Arkansas California Colorado Connecticut Delaware DC Florida Georgia Hawaii Idaho Illinois Indiana Iowa Kansas Kentucky Louisiana Maine Maryland Massachusetts Michigan Minnesota Mississippi Missouri Montana Nebraska Nevada New Hampshire New Jersey New Mexico New York North Carolina North Dakota Ohio Oklahoma Oregon Pennsylvania Rhode Island South Carolina South Dakota Tennessee Texas Utah Vermont Virginia Washington West Virginia Wisconsin Wyoming]) %>
+  </div>
+  <div class="field">
+    <%= f.label :country %><br />
+    <%= f.text_field :country %>
+  </div>
+
+  <div class="field">
+    <%= f.label :email %><br />
+    <%= f.text_field :email %>
+  </div>
+  <div class="field">
+    <%= f.label :birthday %><br />
+    <%= f.date_select(:birthday, :start_year => 1900) %>
+  </div>
+  <div class="field">
+    <%= f.label :bboying_since %><br />
+    <%= f.date_select(:bboying_since, :start_year => 1900) %>
+  </div>
+  <div class="field">
+    <%= f.label :favorite_character %><br />
+    <%= f.select(:favorite_character, %w(Bardock Broly Bulma Cell Cooler Freeza Gohan Goku Kame Kuririn Majin Buu Nappa Piccolo Radditz Tenshinhan Trunks Vegeta Yamcha RedRibbonArmy))  %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

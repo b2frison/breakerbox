@@ -1,0 +1,46 @@
+<h1>Listing breakers</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Password</th>
+    <th>Country</th>
+    <th>Province</th>
+    <th>Region</th>
+    <th>Address</th>
+    <th>Email</th>
+    <th>Birthday</th>
+    <th>Bboying since</th>
+    <th>Favorite character</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @breakers.each do |breaker| %>
+  <tr>
+    <td><%= breaker.name %></td>
+    <td><%= breaker.password %></td>
+    <td><%= breaker.address %></td>
+    <td><%= breaker.state %></td>
+       <td><%= breaker.city %></td>
+       <td><%= breaker.country %></td>
+
+ 
+    
+
+   
+    <td><%= breaker.email %></td>
+    <td><%= breaker.birthday %></td>
+    <td><%= breaker.bboying_since %></td>
+    <td><%= breaker.favorite_character %></td>
+    <td><%= link_to 'Show', breaker %></td>
+    <td><%= link_to 'Edit', edit_breaker_path(breaker) %></td>
+    <td><%= link_to 'Destroy', breaker, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+<%= gmaps4rails(@json) %>
+<br />
+
+<%= link_to 'New Breaker', new_breaker_path %>
