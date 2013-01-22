@@ -25,7 +25,7 @@ class BreakersController < ApplicationController
   # GET /breakers/new.json
   def new
     @breaker = Breaker.new
-
+debugger
     respond_to do |format|
       format.html # new.html.erb
       format.json { render json: @breaker }
@@ -41,7 +41,7 @@ class BreakersController < ApplicationController
   # POST /breakers.json
   def create
     @breaker = Breaker.new(params[:breaker])
-
+    
     respond_to do |format|
       if @breaker.save
         format.html { redirect_to @breaker, notice: 'Breaker was successfully created.' }

@@ -2,11 +2,9 @@
 <div style="float:left"> 
 	<p>
 	<b>Photo:</b><br />
-  <% if @breaker.has_photo? %>
-	  <%= image_tag(@breaker.photo_path, :width => "250") %>
-          <% else %>
-	  No photo.
-  <% end %>
+	 <%= image_tag @breaker.photo.url(:small) %>
+         
+	
   </p>
 
   <p>

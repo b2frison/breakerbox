@@ -1,4 +1,4 @@
-<%= form_for(@breaker) do |f| %>
+<%= form_for(@breaker, :html => { :multipart => true }) do |f| %>
   <% if @breaker.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@breaker.errors.count, "error") %> prohibited this breaker from being saved:</h2>
